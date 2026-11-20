@@ -1,11 +1,10 @@
 from pathlib import Path
 
-# Pfad zur Datendatei (liegt im selben Ordner wie diese Skriptdatei)
 DATENDATEI = Path(__file__).with_name("bibliotheksdaten.txt")
 
 
 def laden():
-    """Liest die gespeicherten Medien und Ausleihen aus der Textdatei ein."""
+  
     daten = {
         "medien": {},
         "ausleihen": [],
@@ -16,7 +15,6 @@ def laden():
 
     with open(DATENDATEI, "r", encoding="utf-8") as datei:
         for zeile in datei:
-            # Zeilenumbruch entfernen und am Trennzeichen '|' aufspalten
             teile = zeile.rstrip("\n").split("|")
             art = teile[0]
 
